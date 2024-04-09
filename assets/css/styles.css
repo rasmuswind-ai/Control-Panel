@@ -1,20 +1,33 @@
 :root {
-    --background: #dddbeb;
+    --background: rgb(241, 241, 241);
     --navbar-width: 256px;
     --navbar-width-min: 80px;
     --navbar-dark-primary: #18283b;
     --navbar-dark-secondary: #2c3e50;
     --navbar-light-primary: #f5f6fa;
     --navbar-light-secondary: #8392a5; 
+    --font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
   
 html, body {
     margin: 0;
     background: var(--background); 
 }
-  
+  /*---------------------- CONTAINER ----------------------*/
+.container {
+    margin-left: 15%;
+    margin-right: 5%;
+}
+
+
+#nav-toggle:checked ~ .main-content .container {
+    margin-left: 30%;
+}
+
+/*---------------------- NAV ----------------------*/
+
 #nav-toggle:checked ~ #nav-header {
-    width: calc(var(--navbar-width-min) - 16px); 
+    width: calc(var(--navbar-width-min) - 16px);
 }
   
 #nav-toggle:checked ~ #nav-content, #nav-toggle:checked ~ #nav-footer {
@@ -69,17 +82,15 @@ html, body {
     height: calc(100% - 2vw);
     background: var(--navbar-dark-primary);
     border-radius: 16px;
-    display: flex;
-    flex-direction: column;
     color: var(--navbar-light-primary);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font-family);
     overflow: hidden;
     user-select: none; 
 }
 #nav-bar hr {
     margin: 0;
     position: relative;
-    left: 16px;
+    left: 8px;
     width: calc(100% - 32px);
     border: none;
     border-top: solid 1px var(--navbar-dark-secondary);
@@ -159,6 +170,7 @@ html, body {
     position: relative;
     flex: 1;
     width: var(--navbar-width);
+    height: 60%;
     background: var(--navbar-dark-primary);
     box-shadow: 0 0 0 16px var(--navbar-dark-primary);
     direction: rtl;
@@ -227,6 +239,18 @@ html, body {
 }
 .nav-button:nth-of-type(3):hover ~ #nav-content-highlight {
     top: 124px;
+}
+.nav-button:nth-of-type(4):hover {
+    color: var(--navbar-dark-primary);
+}
+.nav-button:nth-of-type(4):hover ~ #nav-content-highlight {
+    top: 178px;
+}
+.nav-button:nth-of-type(5):hover {
+    color: var(--navbar-dark-primary);
+}
+.nav-button:nth-of-type(5):hover ~ #nav-content-highlight {
+    top: 232px;
 }
 
 .nav-button .uil {
